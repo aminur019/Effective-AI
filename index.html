@@ -1,0 +1,1674 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Effective AI Solutions | Revolutionize Your Business with AI Automation</title>
+    <meta name="description" content="Boost productivity, save time, and close more deals with our human-like AI Agents. Schedule a free consultation today.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        secondary: {
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                            700: '#6d28d9',
+                        }
+                    },
+                    animation: {
+                        'gradient-x': 'gradient-x 8s ease infinite',
+                    },
+                    keyframes: {
+                        'gradient-x': {
+                            '0%, 100%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'left center'
+                            },
+                            '50%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'right center'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #0ea5e9, #8b5cf6);
+            background-size: 200% 200%;
+            animation: gradient-x 8s ease infinite;
+        }
+        
+        .hero-bg {
+            background-image: url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+        }
+        
+        .scroll-indicator {
+            height: 4px;
+            background: linear-gradient(to right, #0ea5e9, #8b5cf6);
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            transition: width 0.1s;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .testimonial-card:hover {
+            transform: scale(1.03);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            margin-bottom: 1rem;
+        }
+        
+        .step-connector {
+            position: relative;
+        }
+        
+        .step-connector:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            width: 50px;
+            height: 2px;
+            background-color: #cbd5e1;
+            transform: translateY(-50%);
+        }
+        
+        @media (max-width: 768px) {
+            .step-connector:after {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-gray-800 dark:text-gray-200 bg-white dark:bg-gray-900">
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator" id="scrollIndicator"></div>
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center">
+						<img src="https://static.wixstatic.com/media/150032_a76b5d9f92bf42d3918c403f8995c1f3~mv2.jpg/v1/fill/w_44,h_49,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/150032_a76b5d9f92bf42d3918c403f8995c1f3~mv2.jpg">
+                        <span class="pl-4 text-2xl font-bold text-primary-600 dark:text-primary-400">EffectiveAISolutions.com</span>
+                    </a>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#solutions" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition">Solutions</a>
+                    <a href="#how-it-works" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition">How It Works</a>
+                    <a href="#pricing" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition">Pricing</a>
+                    <a href="#testimonials" class="text-gray-700 dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400 transition">Testimonials</a>
+                    
+                    <button id="darkModeToggle" class="p-2 rounded-full text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+                        <i class="fas fa-moon dark:hidden"></i>
+                        <i class="fas fa-sun hidden dark:inline"></i>
+                    </button>
+                    
+                    <a href="#contact" class="px-4 py-2 rounded-md bg-primary-600 text-white hover:bg-primary-700 transition shadow-md">
+                        Get Started
+                    </a>
+                </div>
+                
+                <div class="md:hidden flex items-center">
+                    <button id="mobileMenuButton" class="p-2 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white dark:bg-gray-800 shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#solutions" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Solutions</a>
+                <a href="#how-it-works" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">How It Works</a>
+                <a href="#pricing" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Pricing</a>
+                <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700">Testimonials</a>
+                <div class="flex items-center px-3 py-2">
+                    <span class="text-gray-700 dark:text-gray-300 mr-2">Dark Mode:</span>
+                    <button id="mobileDarkModeToggle" class="relative inline-flex h-6 w-11 items-center rounded-full bg-gray-200 dark:bg-gray-700 transition-colors">
+                        <span class="sr-only">Toggle dark mode</span>
+                        <span class="inline-block h-4 w-4 transform rounded-full bg-white dark:bg-gray-300 translate-x-1 dark:translate-x-6 transition-transform"></span>
+                    </button>
+                </div>
+                <a href="#contact" class="block w-full text-center px-3 py-2 rounded-md bg-primary-600 text-white hover:bg-primary-700 transition">
+                    Get Started
+                </a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero-bg gradient-bg pt-24 pb-32 md:min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-center md:text-left" data-aos="fade-up">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                        Revolutionize Your Business with AI Automation
+                    </h1>
+                    <p class="text-xl text-white/90 mb-8 max-w-lg mx-auto md:mx-0">
+                        Boost productivity, save time, and close more deals with our human-like AI Agents.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start" data-aos="zoom-in" data-aos-delay="300">
+                        <a href="#contact" class="px-8 py-4 bg-white text-primary-600 font-semibold rounded-lg hover:bg-gray-100 transition shadow-lg transform hover:scale-105">
+                            Schedule Free Call
+                        </a>
+                        <a href="#" class="px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition shadow-lg transform hover:scale-105">
+                            Chat with Our AI
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:block" data-aos="fade-left">
+                    <div class="relative">
+                        <div class="absolute -top-8 -left-8 w-64 h-64 bg-primary-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+                        <div class="absolute -bottom-8 -right-8 w-64 h-64 bg-secondary-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+                        <div class="relative bg-white/10 backdrop-blur-md rounded-2xl shadow-2xl overflow-hidden border border-white/20">
+                            <div class="p-4 bg-gray-900/50 flex items-center space-x-2">
+                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-start space-x-3">
+                                    <div class="flex-shrink-0">
+                                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center text-white">
+                                            <i class="fas fa-robot"></i>
+                                        </div>
+                                    </div>
+                                    <div class="bg-white/10 p-4 rounded-lg rounded-tl-none">
+                                        <p class="text-white">Hi there! I'm your AI assistant. How can I help your business today?</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3 mt-4">
+                                    <div class="flex-shrink-0">
+                                        <div class="w-10 h-10 rounded-full bg-gray-300 flex items-center justify-center">
+                                            <i class="fas fa-user text-gray-700"></i>
+                                        </div>
+                                    </div>
+                                    <div class="bg-white p-4 rounded-lg rounded-tl-none">
+                                        <p class="text-gray-800">Can you help me automate my customer support?</p>
+                                    </div>
+                                </div>
+                                <div class="mt-4">
+                                    <div class="bg-white/5 border border-white/10 rounded-lg p-3">
+                                        <p class="text-white/80 text-sm">AI is typing...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+ <!-- Client Trust Bar -->
+  <section class="py-12 bg-gray-50 bg-gray-100">
+   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h3 class="text-center text-gray-500 dark:text-gray-400 mb-8 text-sm font-semibold uppercase tracking-wider" data-aos="fade-in">
+     Trusted by innovative companies worldwide
+    </h3>
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center" data-aos="fade-in" data-aos-delay="200">
+     <div class="flex justify-center">
+      <img alt="Logo of Google, a leading technology company" class="h-8 opacity-70 dark:opacity-90 grayscale hover:grayscale-0 transition" src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"/>
+     </div>
+     <div class="flex justify-center">
+      <img alt="Logo of IBM, a global software solutions provider" class="h-8 opacity-70 dark:opacity-90 grayscale hover:grayscale-0 transition" src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg"/>
+     </div>
+     <div class="flex justify-center">
+      <img alt="Logo of Apple, an innovative technology company" class="h-10 opacity-70 dark:opacity-90 grayscale hover:grayscale-0 transition" src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"/>
+     </div>
+     <div class="flex justify-center">
+      <img alt="Logo of Microsoft, a data management company" class="h-8 opacity-70 dark:opacity-90 grayscale hover:grayscale-0 transition" src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"/>
+     </div>
+     <div class="flex justify-center">
+      <img alt="Logo of Amazon, a cloud services provider" class="h-8 opacity-70 dark:opacity-90 grayscale hover:grayscale-0 transition" src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"/>
+     </div>
+     <div class="flex justify-center">
+      <img alt="Logo of Tesla, an innovative electric vehicle and clean energy company" class="h-8 opacity-70 dark:opacity-90 grayscale hover:grayscale-0 transition" src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Tesla_Motors.svg"/>
+     </div>
+    </div>
+   </div>
+  </section>
+    
+    
+   <!-- Founder Info Section -->
+<section class="py-20 bg-white dark:bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                Meet Our Founder
+            </h2>
+            <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                The visionary behind EffectiveAI's innovative solutions
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="relative" data-aos="fade-right">
+                <div class="absolute -inset-4 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-2xl opacity-20 blur-lg"></div>
+                <img src="https://static.wixstatic.com/media/150032_3a9a48c3ead1431eb11ee42644f3730e~mv2.jpg/v1/fill/w_455,h_255,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/150032_3a9a48c3ead1431eb11ee42644f3730e~mv2.jpg" alt="Founder" class="relative rounded-2xl shadow-xl w-full max-w-md mx-auto">
+            </div>
+            
+            <div data-aos="fade-left">
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Dr. Alex Johnson</h3>
+                <p class="text-lg text-primary-600 dark:text-primary-400 mb-6">AI Pioneer & Serial Entrepreneur</p>
+                
+                <div class="prose dark:prose-invert text-gray-600 dark:text-gray-300 mb-8">
+                    <p>With over 15 years of experience in artificial intelligence and machine learning, Dr. Johnson founded EffectiveAI to bridge the gap between cutting-edge AI research and practical business applications.</p>
+                    <p class="mt-4">His previous ventures include two successful AI startups acquired by Fortune 500 companies, and he holds patents in natural language processing and conversational AI.</p>
+                    <p class="mt-4">"Our mission is to make enterprise-grade AI accessible to businesses of all sizes, helping them compete in an increasingly automated world."</p>
+                </div>
+                
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-500 hover:text-primary-600 dark:hover:text-primary-400 transition">
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-primary-600 dark:hover:text-primary-400 transition">
+                        <i class="fab fa-twitter text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-500 hover:text-primary-600 dark:hover:text-primary-400 transition">
+                        <i class="fas fa-globe text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> 
+    
+    <!-- What We Offer -->
+    <section id="solutions" class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                    AI Solutions for Your Business Needs
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                    Our AI agents are designed to handle specific business functions with human-like precision.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400">
+                        <i class="fas fa-bullseye text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Lead Generation</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        Our AI identifies and qualifies leads 24/7, so you never miss an opportunity.
+                    </p>
+                    <a href="#" class="text-primary-600 dark:text-primary-400 font-medium hover:underline flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400">
+                        <i class="fas fa-headset text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Customer Support</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        Instant, accurate responses to customer inquiries anytime, day or night.
+                    </p>
+                    <a href="#" class="text-primary-600 dark:text-primary-400 font-medium hover:underline flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400">
+                        <i class="fas fa-chart-line text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Sales Automation</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        Close more deals with AI that follows up, nurtures, and converts leads.
+                    </p>
+                    <a href="#" class="text-primary-600 dark:text-primary-400 font-medium hover:underline flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400">
+                        <i class="fas fa-tasks text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Workflow Automation</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4">
+                        Streamline operations by automating repetitive tasks and processes.
+                    </p>
+                    <a href="#" class="text-primary-600 dark:text-primary-400 font-medium hover:underline flex items-center">
+                        Learn more <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                    Simple Integration, Powerful Results
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                    Get your custom AI agent up and running in minutes, not weeks.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="step-connector" data-aos="slide-right">
+                    <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-8 h-full">
+                        <div class="text-4xl font-bold text-primary-600 dark:text-primary-400 mb-4">1</div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Connect Your Tools</h3>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            Integrate with your CRM, email, calendar, and other business tools in just a few clicks.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="step-connector" data-aos="slide-right" data-aos-delay="200">
+                    <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-8 h-full">
+                        <div class="text-4xl font-bold text-primary-600 dark:text-primary-400 mb-4">2</div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Train Your AI Agent</h3>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            Upload documents, FAQs, or chat with the AI to teach it about your business.
+                        </p>
+                    </div>
+                </div>
+                
+                <div data-aos="slide-right" data-aos-delay="400">
+                    <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-8 h-full">
+                        <div class="text-4xl font-bold text-primary-600 dark:text-primary-400 mb-4">3</div>
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Deploy & Scale</h3>
+                        <p class="text-gray-600 dark:text-gray-300">
+                            Go live instantly and scale your AI workforce as your business grows.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center" data-aos="fade-up" data-aos-delay="600">
+                <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary-600 hover:bg-primary-700 transition">
+                    <i class="fas fa-play-circle mr-2"></i> Watch Demo Video
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Live Demo Preview -->
+    <section class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
+                        See Our AI in Action
+                    </h2>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+                        Our AI assistant can handle complex conversations, understand context, and provide human-like responses.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700 dark:text-gray-300">Natural, conversational interactions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700 dark:text-gray-300">24/7 availability with instant responses</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700 dark:text-gray-300">Continuous learning and improvement</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="px-6 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition inline-flex items-center">
+                        Try Live Demo <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                
+                <div class="relative" data-aos="zoom-in">
+                    <div class="absolute -top-6 -left-6 w-full h-full bg-primary-500/10 rounded-2xl -z-10"></div>
+                    <div class="bg-gray-800 rounded-xl shadow-xl overflow-hidden border border-gray-700">
+                        <div class="p-3 bg-gray-900 flex items-center space-x-2">
+                            <div class="w-2 h-2 rounded-full bg-red-500"></div>
+                            <div class="w-2 h-2 rounded-full bg-yellow-500"></div>
+                            <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                        </div>
+                        <div class="p-4">
+                            <div class="flex items-start space-x-3 mb-4">
+                                <div class="flex-shrink-0">
+                                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-primary-500 to-purple-500 flex items-center justify-center text-white">
+                                        <i class="fas fa-robot text-sm"></i>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-700 p-3 rounded-lg rounded-tl-none max-w-xs">
+                                    <p class="text-white text-sm">Hello! I'm your AI assistant. How can I help you today?</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-3 mb-4">
+                                <div class="flex-shrink-0">
+                                    <div class="w-8 h-8 rounded-full bg-gray-600 flex items-center justify-center">
+                                        <i class="fas fa-user text-gray-300 text-sm"></i>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-700 p-3 rounded-lg rounded-tl-none max-w-xs">
+                                    <p class="text-white text-sm">I need help with a customer complaint about a late delivery.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-3 mb-4">
+                                <div class="flex-shrink-0">
+                                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-primary-500 to-purple-500 flex items-center justify-center text-white">
+                                        <i class="fas fa-robot text-sm"></i>
+                                    </div>
+                                </div>
+                                <div class="bg-gray-700 p-3 rounded-lg rounded-tl-none max-w-xs">
+                                    <p class="text-white text-sm">I'm sorry to hear about the delay. I can check the order status and offer solutions. May I have the order number?</p>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-900/50 p-3 rounded-lg">
+                                <div class="flex items-center">
+                                    <input type="text" placeholder="Type your message..." class="flex-grow bg-gray-800 text-white text-sm rounded-l-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500">
+                                    <button class="bg-primary-600 text-white px-4 py-2 rounded-r-lg hover:bg-primary-700 transition">
+                                        <i class="fas fa-paper-plane"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Why Choose Us -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                    Why Businesses Choose Our AI Solutions
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                    We combine cutting-edge technology with practical business applications.
+                </p>
+            </div>
+            
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-md hover:shadow-lg transition" data-aos="fade-in" data-aos-delay="100">
+                    <div class="w-12 h-12 bg-primary-100 dark:bg-primary-900/20 rounded-lg flex items-center justify-center text-primary-600 dark:text-primary-400 mb-4">
+                        <i class="fas fa-clock text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">24/7 Availability</h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Your AI never sleeps, ensuring round-the-clock support and lead engagement.
+                    </p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-md hover:shadow-lg transition" data-aos="fade-in" data-aos-delay="200">
+                    <div class="w-12 h-12 bg-green-100 dark:bg-green-900/20 rounded-lg flex items-center justify-center text-green-600 dark:text-green-400 mb-4">
+                        <i class="fas fa-dollar-sign text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Cost Efficient</h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Save up to 80% compared to human staff for routine tasks and inquiries.
+                    </p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-md hover:shadow-lg transition" data-aos="fade-in" data-aos-delay="300">
+                    <div class="w-12 h-12 bg-purple-100 dark:bg-purple-900/20 rounded-lg flex items-center justify-center text-purple-600 dark:text-purple-400 mb-4">
+                        <i class="fas fa-sliders-h text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Customizable</h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Tailor the AI's personality, knowledge, and responses to match your brand.
+                    </p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-md hover:shadow-lg transition" data-aos="fade-in" data-aos-delay="400">
+                    <div class="w-12 h-12 bg-yellow-100 dark:bg-yellow-900/20 rounded-lg flex items-center justify-center text-yellow-600 dark:text-yellow-400 mb-4">
+                        <i class="fas fa-bolt text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Instant Scaling</h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Handle spikes in demand without hiring or training additional staff.
+                    </p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-md hover:shadow-lg transition" data-aos="fade-in" data-aos-delay="500">
+                    <div class="w-12 h-12 bg-red-100 dark:bg-red-900/20 rounded-lg flex items-center justify-center text-red-600 dark:text-red-400 mb-4">
+                        <i class="fas fa-chart-line text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Performance Analytics</h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Detailed insights into conversations, resolutions, and customer satisfaction.
+                    </p>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-700 rounded-xl p-6 shadow-md hover:shadow-lg transition" data-aos="fade-in" data-aos-delay="600">
+                    <div class="w-12 h-12 bg-blue-100 dark:bg-blue-900/20 rounded-lg flex items-center justify-center text-blue-600 dark:text-blue-400 mb-4">
+                        <i class="fas fa-plug text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Easy Integration</h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Works seamlessly with your existing tools and workflows.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- AI vs Human Comparison -->
+    <section class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                    AI vs Human: The Numbers Speak
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                    See how our AI solutions compare to traditional human employees.
+                </p>
+            </div>
+            
+            <div class="bg-gray-50 dark:bg-gray-800 rounded-xl p-6 shadow-lg" data-aos="fade-up">
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+                        <thead class="bg-gray-100 dark:bg-gray-700">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+                                    Metric
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+                                    Human Employee
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+                                    Our AI Agent
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+                                    Advantage
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
+                                    Cost per month
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                                    $3,000+
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                                    $299
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+                                        90% less
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
+                                    Availability
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                                    8 hours/day
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                                    24/7
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+                                        3x more
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
+                                    Response time
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                                    5-10 minutes
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                                    Instant
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+                                        10x faster
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
+                                    Training time
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                                    2-4 weeks
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                                    1 hour
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+                                        98% faster
+                                    </span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900 dark:text-white">
+                                    Consistency
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                                    Variable
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">
+                                    Perfect
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap">
+                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
+                                        Always on-brand
+                                    </span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="mt-8 text-center" data-aos="fade-up" data-aos-delay="300">
+                    <a href="#pricing" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary-600 hover:bg-primary-700 transition">
+                        See Pricing Plans <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                    What Our Clients Say
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                    Don't just take our word for it - hear from businesses like yours.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-700 rounded-xl p-8 shadow-md hover:shadow-lg transition testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-6">
+                        <div class="flex-shrink-0">
+                            <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah Johnson">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-bold text-gray-900 dark:text-white">Sarah Johnson</h4>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm">CEO, TechStart Inc.</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 italic mb-6">
+                        "Our customer support response time dropped from 12 hours to 2 minutes after implementing EffectiveAI. The ROI was immediate and substantial."
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-700 rounded-xl p-8 shadow-md hover:shadow-lg transition testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-6">
+                        <div class="flex-shrink-0">
+                            <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/men/45.jpg" alt="Michael Chen">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-bold text-gray-900 dark:text-white">Michael Chen</h4>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm">Director of Sales, GlobalSoft</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 italic mb-6">
+                        "The AI lead qualification has increased our sales team's productivity by 40%. We're closing more deals with less effort."
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-700 rounded-xl p-8 shadow-md hover:shadow-lg transition testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-6">
+                        <div class="flex-shrink-0">
+                            <img class="h-12 w-12 rounded-full" src="https://randomuser.me/api/portraits/women/68.jpg" alt="David Rodriguez">
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-lg font-bold text-gray-900 dark:text-white">David Rodriguez</h4>
+                            <p class="text-gray-600 dark:text-gray-300 text-sm">COO, RetailChain</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 italic mb-6">
+                        "We've reduced our customer service costs by 75% while improving satisfaction scores. The AI handles 80% of inquiries without human intervention."
+                    </p>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center" data-aos="fade-up" data-aos-delay="400">
+                <a href="#" class="inline-flex items-center text-primary-600 dark:text-primary-400 hover:underline font-medium">
+                    Read more success stories <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Pricing -->
+    <section id="pricing" class="py-20 bg-white dark:bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                    Simple, Transparent Pricing
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                    Choose the plan that fits your business needs.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 pricing-card transition" data-aos="zoom-in" data-aos-delay="100">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Starter</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">Perfect for small businesses getting started with AI</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-gray-900 dark:text-white">$299</span>
+                        <span class="text-gray-600 dark:text-gray-300">/month</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700 dark:text-gray-300">1 AI Agent</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700 dark:text-gray-300">1,000 conversations/month</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700 dark:text-gray-300">Basic Integrations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700 dark:text-gray-300">Email Support</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block w-full text-center px-6 py-3 border border-primary-600 text-primary-600 dark:text-primary-400 font-medium rounded-lg hover:bg-primary-50 dark:hover:bg-gray-700 transition">
+                        Get Started
+                    </a>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-xl p-8 pricing-card border-2 border-primary-500 transform scale-105 transition" data-aos="zoom-in">
+                    <div class="absolute top-0 right-0 bg-primary-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">
+                        MOST POPULAR
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Professional</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">For growing businesses with multiple use cases</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-gray-900 dark:text-white">$799</span>
+                        <span class="text-gray-600 dark:text-gray-300">/month</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700 dark:text-gray-300">3 AI Agents</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700 dark:text-gray-300">5,000 conversations/month</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700 dark:text-gray-300">Advanced Integrations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700 dark:text-gray-300">Priority Support</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700 dark:text-gray-300">Performance Analytics</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block w-full text-center px-6 py-3 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition shadow-lg">
+                        Get Started
+                    </a>
+                </div>
+                
+                <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 pricing-card transition" data-aos="zoom-in" data-aos-delay="100">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Enterprise</h3>
+                    <p class="text-gray-600 dark:text-gray-300 mb-6">Custom solutions for large organizations</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-gray-900 dark:text-white">Custom</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700 dark:text-gray-300">Unlimited AI Agents</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700 dark:text-gray-300">Unlimited conversations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700 dark:text-gray-300">Custom Integrations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700 dark:text-gray-300">Dedicated Account Manager</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-3"></i>
+                            <span class="text-gray-700 dark:text-gray-300">24/7 Premium Support</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="block w-full text-center px-6 py-3 border border-primary-600 text-primary-600 dark:text-primary-400 font-medium rounded-lg hover:bg-primary-50 dark:hover:bg-gray-700 transition">
+                        Contact Sales
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center" data-aos="fade-up">
+                <p class="text-gray-600 dark:text-gray-300 mb-4">
+                    Need something different? We offer custom plans tailored to your needs.
+                </p>
+                <a href="#contact" class="inline-flex items-center text-primary-600 dark:text-primary-400 hover:underline font-medium">
+                    Talk to our team <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQs -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                    Frequently Asked Questions
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                    Get answers to common questions about our AI solutions.
+                </p>
+            </div>
+            
+            <div class="space-y-4" data-aos="fade-down">
+                <div x-data="{ open: false }" class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+                    <button @click="open = !open" class="w-full flex justify-between items-center p-6 text-left bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 transition">
+                        <h3 class="text-lg font-medium text-gray-900 dark:text-white">
+                            How does your AI differ from standard chatbots?
+                        </h3>
+                        <i :class="{'rotate-180': open}" class="fas fa-chevron-down text-primary-600 dark:text-primary-400 transition-transform"></i>
+                    </button>
+                    <div x-show="open" x-collapse class="px-6 pb-6 text-gray-600 dark:text-gray-300">
+                        <p class="mb-4">
+                            Our AI agents go beyond simple rule-based chatbots. They use advanced natural language processing to understand context, maintain conversation flow, and learn from interactions. Unlike basic chatbots, our AI can handle complex queries, remember past interactions, and provide personalized responses.
+                        </p>
+                        <p>
+                            We combine large language models with your specific business knowledge to create an assistant that truly understands your customers and operations.
+                        </p>
+                    </div>
+                </div>
+                
+                <div x-data="{ open: false }" class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+                    <button @click="open = !open" class="w-full flex justify-between items-center p-6 text-left bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 transition">
+                        <h3 class="text-lg font-medium text-gray-900 dark:text-white">
+                            What integrations do you support?
+                        </h3>
+                        <i :class="{'rotate-180': open}" class="fas fa-chevron-down text-primary-600 dark:text-primary-400 transition-transform"></i>
+                    </button>
+                    <div x-show="open" x-collapse class="px-6 pb-6 text-gray-600 dark:text-gray-300">
+                        <p class="mb-4">
+                            We support integration with all major business tools including:
+                        </p>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>CRM platforms (Salesforce, HubSpot, Zoho)</li>
+                            <li>Email and calendar services (Gmail, Outlook, Google Calendar)</li>
+                            <li>Help desk software (Zendesk, Freshdesk)</li>
+                            <li>Communication tools (Slack, Microsoft Teams)</li>
+                            <li>Payment processors (Stripe, PayPal)</li>
+                            <li>Custom API connections</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div x-data="{ open: false }" class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+                    <button @click="open = !open" class="w-full flex justify-between items-center p-6 text-left bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 transition">
+                        <h3 class="text-lg font-medium text-gray-900 dark:text-white">
+                            How long does implementation take?
+                        </h3>
+                        <i :class="{'rotate-180': open}" class="fas fa-chevron-down text-primary-600 dark:text-primary-400 transition-transform"></i>
+                    </button>
+                    <div x-show="open" x-collapse class="px-6 pb-6 text-gray-600 dark:text-gray-300">
+                        <p>
+                            Most customers can have their first AI agent up and running within 24 hours. The basic setup involves connecting your tools, uploading training materials (FAQs, product info, etc.), and setting up your initial workflows. More complex implementations with custom integrations may take 3-5 business days.
+                        </p>
+                    </div>
+                </div>
+                
+                <div x-data="{ open: false }" class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+                    <button @click="open = !open" class="w-full flex justify-between items-center p-6 text-left bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 transition">
+                        <h3 class="text-lg font-medium text-gray-900 dark:text-white">
+                            Is there a free trial available?
+                        </h3>
+                        <i :class="{'rotate-180': open}" class="fas fa-chevron-down text-primary-600 dark:text-primary-400 transition-transform"></i>
+                    </button>
+                    <div x-show="open" x-collapse class="px-6 pb-6 text-gray-600 dark:text-gray-300">
+                        <p class="mb-4">
+                            Yes! We offer a 14-day free trial of our Professional plan with no credit card required. This gives you full access to all features so you can experience the power of our AI firsthand.
+                        </p>
+                        <p>
+                            For enterprise customers, we can arrange extended proof-of-concept periods with custom configurations.
+                        </p>
+                    </div>
+                </div>
+                
+                <div x-data="{ open: false }" class="border border-gray-200 dark:border-gray-700 rounded-lg overflow-hidden">
+                    <button @click="open = !open" class="w-full flex justify-between items-center p-6 text-left bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 transition">
+                        <h3 class="text-lg font-medium text-gray-900 dark:text-white">
+                            How do you ensure data privacy and security?
+                        </h3>
+                        <i :class="{'rotate-180': open}" class="fas fa-chevron-down text-primary-600 dark:text-primary-400 transition-transform"></i>
+                    </button>
+                    <div x-show="open" x-collapse class="px-6 pb-6 text-gray-600 dark:text-gray-300">
+                        <p class="mb-4">
+                            Data security is our top priority. We implement:
+                        </p>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>End-to-end encryption for all data in transit and at rest</li>
+                            <li>Regular security audits and penetration testing</li>
+                            <li>SOC 2 Type II compliance</li>
+                            <li>GDPR and CCPA compliance</li>
+                            <li>Option for on-premises deployment for enterprise customers</li>
+                            <li>Strict access controls and audit logging</li>
+                        </ul>
+                        <p class="mt-4">
+                            Your data is never used to train public models or shared with third parties.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+<!-- Contact Us Section -->
+<section id="contact" class="py-20 bg-gray-50 dark:bg-gray-800">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                Get In Touch
+            </h2>
+            <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                Have questions? Our team is ready to help you leverage AI for your business.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12">
+            <div data-aos="fade-right">
+                <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-8 h-full">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Contact Information</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-primary-100 dark:bg-primary-900/20 rounded-lg p-3 text-primary-600 dark:text-primary-400">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-gray-900 dark:text-white">Headquarters</h4>
+                                <p class="text-gray-600 dark:text-gray-300">123 AI Boulevard<br>San Francisco, CA 94107</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-primary-100 dark:bg-primary-900/20 rounded-lg p-3 text-primary-600 dark:text-primary-400">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-gray-900 dark:text-white">Email Us</h4>
+                                <p class="text-gray-600 dark:text-gray-300">
+                                    <a href="mailto:hello@effectiveai.com" class="hover:text-primary-600 dark:hover:text-primary-400 transition">hello@effectiveai.com</a>
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 bg-primary-100 dark:bg-primary-900/20 rounded-lg p-3 text-primary-600 dark:text-primary-400">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-medium text-gray-900 dark:text-white">Call Us</h4>
+                                <p class="text-gray-600 dark:text-gray-300">
+                                    <a href="tel:+18005551234" class="hover:text-primary-600 dark:hover:text-primary-400 transition">+1 (800) 555-1234</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h4 class="text-lg font-medium text-gray-900 dark:text-white mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-600 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-primary-100 hover:text-primary-600 dark:hover:bg-primary-900/20 dark:hover:text-primary-400 transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-600 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-primary-100 hover:text-primary-600 dark:hover:bg-primary-900/20 dark:hover:text-primary-400 transition">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-600 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-primary-100 hover:text-primary-600 dark:hover:bg-primary-900/20 dark:hover:text-primary-400 transition">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-600 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:bg-primary-100 hover:text-primary-600 dark:hover:bg-primary-900/20 dark:hover:text-primary-400 transition">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+					<div class="pt-8">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52816169.558200695!2d-161.49265223136007!3d36.102185713814805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited%20States!5e0!3m2!1sen!2sbd!4v1744393058340!5m2!1sen!2sbd" width="520" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+					</div>
+                </div>
+				
+            </div>
+            
+            <div data-aos="fade-left">
+                <div class="bg-white dark:bg-gray-700 rounded-xl shadow-lg p-8 h-full">
+                    <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Send Us a Message</h3>
+                    <form>
+                        <div class="grid grid-cols-1 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Full Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition">
+                            </div>
+                            
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition">
+                            </div>
+                            
+                            <div>
+                                <label for="company" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Company (Optional)</label>
+                                <input type="text" id="company" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition">
+                            </div>
+                            
+                            <div>
+                                <label for="interest" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">I'm interested in</label>
+                                <select id="interest" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition">
+                                    <option>Select an option</option>
+                                    <option>Lead Generation AI</option>
+                                    <option>Customer Support AI</option>
+                                    <option>Sales Automation</option>
+                                    <option>Workflow Automation</option>
+                                    <option>Enterprise Solution</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Your Message</label>
+                                <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition"></textarea>
+                            </div>
+                            
+                            <div>
+                                <button type="submit" class="w-full px-6 py-4 bg-primary-600 text-white font-medium rounded-lg hover:bg-primary-700 transition shadow-lg">
+                                    Send Message
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>    
+    
+    
+    <!-- Final CTA -->
+    <section id="contact" class="py-20 gradient-bg">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center" data-aos="flip-up">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+                Ready to Transform Your Business with AI?
+            </h2>
+            <p class="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
+                Schedule a free consultation to discover how our AI solutions can save you time and money while improving customer experiences.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#" class="px-8 py-4 bg-white text-primary-600 font-semibold rounded-lg hover:bg-gray-100 transition shadow-lg transform hover:scale-105">
+                    Book Free Call
+                </a>
+                <a href="#" class="px-8 py-4 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition shadow-lg transform hover:scale-105">
+                    Try AI Agent Now
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+                <div class="col-span-2">
+                  <div class="pb-4">
+                    <a href="#" class="flex items-center">
+						<img src="https://static.wixstatic.com/media/150032_a76b5d9f92bf42d3918c403f8995c1f3~mv2.jpg/v1/fill/w_44,h_49,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/150032_a76b5d9f92bf42d3918c403f8995c1f3~mv2.jpg">
+                        <span class="pl-4 text-2xl font-bold text-primary-600 dark:text-primary-400">EffectiveAISolutions.com</span>
+                    </a>
+                </div>
+   
+                    <p class="mb-6">
+                        We build AI solutions that work like humans, so you can focus on growing your business.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-6">Solutions</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-white transition">Lead Generation</a></li>
+                        <li><a href="#" class="hover:text-white transition">Customer Support</a></li>
+                        <li><a href="#" class="hover:text-white transition">Sales Automation</a></li>
+                        <li><a href="#" class="hover:text-white transition">Workflow Automation</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-6">Company</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition">Careers</a></li>
+                        <li><a href="#" class="hover:text-white transition">Blog</a></li>
+                        <li><a href="#" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-sm font-semibold text-white uppercase tracking-wider mb-6">Resources</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-white transition">Documentation</a></li>
+                        <li><a href="#" class="hover:text-white transition">API Reference</a></li>
+                        <li><a href="#" class="hover:text-white transition">Community</a></li>
+                        <li><a href="#" class="hover:text-white transition">Status</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-400">
+                    &copy; 2025 EffectiveAI Solutions. All rights reserved.
+                </p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-sm text-gray-400 hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="text-sm text-gray-400 hover:text-white transition">Terms of Service</a>
+                    <a href="#" class="text-sm text-gray-400 hover:text-white transition">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 bg-primary-600 text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all hover:bg-primary-700">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Alpine JS -->
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: false,
+            mirror: false
+        });
+        
+        // Scroll indicator
+        window.addEventListener('scroll', function() {
+            const scrollIndicator = document.getElementById('scrollIndicator');
+            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (scrollTop / scrollHeight) * 100;
+            scrollIndicator.style.width = scrolled + '%';
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Dark mode toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const mobileDarkModeToggle = document.getElementById('mobileDarkModeToggle');
+        const html = document.documentElement;
+        
+        // Check for saved user preference or system preference
+        if (localStorage.getItem('darkMode') === 'true' || 
+            (!localStorage.getItem('darkMode') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+        }
+        
+        // Toggle dark mode
+        function toggleDarkMode() {
+            html.classList.toggle('dark');
+            localStorage.setItem('darkMode', html.classList.contains('dark'));
+        }
+        
+        darkModeToggle.addEventListener('click', toggleDarkMode);
+        mobileDarkModeToggle.addEventListener('click', toggleDarkMode);
+        
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuButton.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+    
+    
+    
+    
+   <!-- AI Chatbot Widget -->
+<div id="chatbotWidget" class="fixed bottom-8 right-20 z-50">
+  <!-- Chatbot Container -->
+  <div id="chatbotContainer" class="hidden w-[400px] h-[600px] bg-white dark:bg-gray-900 rounded-2xl shadow-2xl overflow-hidden flex flex-col border border-gray-200 dark:border-gray-700 backdrop-blur-sm bg-opacity-90 dark:bg-opacity-90 transition-all duration-300 transform">
+    <!-- Chat Header -->
+    <div class="bg-white dark:bg-gray-800 p-4 border-b border-gray-100 dark:border-gray-700 flex justify-between items-center">
+      <div class="flex items-center space-x-3">
+        <div class="relative">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          <span class="absolute bottom-0 right-0 w-3 h-3 bg-green-400 rounded-full border-2 border-white dark:border-gray-900"></span>
+        </div>
+        <div>
+          <h3 class="font-semibold text-gray-900 dark:text-white">EffectiveAI Assistant</h3>
+          <p class="text-xs text-gray-500 dark:text-gray-400">Online now</p>
+        </div>
+      </div>
+      <div class="flex space-x-2">
+        <button id="minimizeChatbot" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 p-1 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M5 10a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1z" clip-rule="evenodd" />
+          </svg>
+        </button>
+        <button id="closeChatbot" class="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 p-1 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    <!-- Chat Messages -->
+    <div id="chatbotMessages" class="flex-1 p-4 overflow-y-auto space-y-4 bg-gray-50 dark:bg-gray-800/50">
+      <!-- Welcome Message -->
+      <div class="flex items-start gap-3">
+        <div class="flex-shrink-0">
+          <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd" />
+            </svg>
+          </div>
+        </div>
+        <div class="max-w-[80%]">
+          <div class="bg-white dark:bg-gray-700 p-4 rounded-xl rounded-tl-none shadow-sm">
+            <p class="text-gray-800 dark:text-gray-200">Hello! I'm your EffectiveAI assistant. How can I help you today? Here are some things I can help with:</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+              <button class="quick-question px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 rounded-full text-xs hover:bg-blue-100 dark:hover:bg-blue-900/50 transition">
+                Pricing plans
+              </button>
+              <button class="quick-question px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 rounded-full text-xs hover:bg-blue-100 dark:hover:bg-blue-900/50 transition">
+                Feature demo
+              </button>
+              <button class="quick-question px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-300 rounded-full text-xs hover:bg-blue-100 dark:hover:bg-blue-900/50 transition">
+                Integration help
+              </button>
+            </div>
+          </div>
+          <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 ml-1">Just now</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Chat Input -->
+    <div class="p-4 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800">
+      <div class="relative">
+        <textarea id="chatbotInput" rows="1" placeholder="Type your message..." 
+          class="w-full px-4 py-3 pr-12 rounded-xl border border-gray-300 dark:border-gray-600 bg-gray-50 dark:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none text-gray-800 dark:text-gray-200 placeholder-gray-400 dark:placeholder-gray-500"
+          style="min-height: 44px; max-height: 120px;"></textarea>
+        <div class="absolute right-3 bottom-3 flex space-x-2">
+          <button id="sendChatbotMessage" class="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center hover:bg-blue-600 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.707l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z" clip-rule="evenodd" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Chatbot Toggle Button -->
+  <button id="openChatbot" class="w-14 h-14 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 text-white shadow-lg flex items-center justify-center hover:shadow-xl transition-all hover:scale-105">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+      <path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.841 8.841 0 01-4.083-.98L2 17l1.338-3.123C2.493 12.767 2 11.434 2 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7 9H5v2h2V9zm8 0h-2v2h2V9zM9 9h2v2H9V9z" clip-rule="evenodd" />
+    </svg>
+  </button>
+</div>
+
+<style>
+  /* Custom scrollbar */
+  #chatbotMessages::-webkit-scrollbar {
+    width: 6px;
+  }
+  #chatbotMessages::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.05);
+    border-radius: 10px;
+  }
+  #chatbotMessages::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.1);
+    border-radius: 10px;
+  }
+  #chatbotMessages::-webkit-scrollbar-thumb:hover {
+    background: rgba(0,0,0,0.2);
+  }
+  
+  /* Smooth message appearance */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .message-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const chatbotContainer = document.getElementById('chatbotContainer');
+    const openChatbot = document.getElementById('openChatbot');
+    const minimizeChatbot = document.getElementById('minimizeChatbot');
+    const closeChatbot = document.getElementById('closeChatbot');
+    const chatbotMessages = document.getElementById('chatbotMessages');
+    const chatbotInput = document.getElementById('chatbotInput');
+    const sendChatbotMessage = document.getElementById('sendChatbotMessage');
+    const quickQuestions = document.querySelectorAll('.quick-question');
+    
+    let isMinimized = false;
+    
+    // Toggle chatbot visibility
+    openChatbot.addEventListener('click', function() {
+      if (isMinimized) {
+        chatbotContainer.classList.remove('hidden');
+        isMinimized = false;
+      } else {
+        chatbotContainer.classList.toggle('hidden');
+      }
+      scrollToBottom();
+    });
+    
+    minimizeChatbot.addEventListener('click', function() {
+      chatbotContainer.classList.add('hidden');
+      isMinimized = true;
+    });
+    
+    closeChatbot.addEventListener('click', function() {
+      chatbotContainer.classList.add('hidden');
+      isMinimized = false;
+    });
+    
+    // Auto-resize textarea
+    chatbotInput.addEventListener('input', function() {
+      this.style.height = 'auto';
+      this.style.height = Math.min(this.scrollHeight, 120) + 'px';
+    });
+    
+    // Quick question buttons
+    quickQuestions.forEach(button => {
+      button.addEventListener('click', function() {
+        chatbotInput.value = this.textContent;
+        chatbotInput.focus();
+        chatbotInput.dispatchEvent(new Event('input'));
+      });
+    });
+    
+    // Send message function
+    function sendMessage() {
+      const message = chatbotInput.value.trim();
+      if (!message) return;
+      
+      // Add user message
+      addMessage(message, 'user');
+      chatbotInput.value = '';
+      chatbotInput.style.height = 'auto';
+      
+      // Show typing indicator
+      const typingIndicator = addTypingIndicator();
+      
+      // Simulate AI response after delay
+      setTimeout(() => {
+        typingIndicator.remove();
+        const response = generateResponse(message);
+        addMessage(response, 'ai');
+      }, 1000 + Math.random() * 1000);
+    }
+    
+    // Add message to chat
+    function addMessage(content, sender) {
+      const messageDiv = document.createElement('div');
+      messageDiv.className = `flex items-start gap-3 message-fade-in ${sender === 'user' ? 'justify-end' : ''}`;
+      
+      if (sender === 'user') {
+        messageDiv.innerHTML = `
+          <div class="max-w-[80%]">
+            <div class="bg-blue-500 text-white p-4 rounded-xl rounded-tr-none shadow-sm">
+              <p>${content}</p>
+            </div>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 mr-1 text-right">Just now</p>
+          </div>
+          <div class="flex-shrink-0">
+            <div class="w-8 h-8 rounded-full bg-gray-300 dark:bg-gray-600 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-gray-700 dark:text-gray-300" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" />
+              </svg>
+            </div>
+          </div>
+        `;
+      } else {
+        messageDiv.innerHTML = `
+          <div class="flex-shrink-0">
+            <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd" />
+              </svg>
+            </div>
+          </div>
+          <div class="max-w-[80%]">
+            <div class="bg-white dark:bg-gray-700 p-4 rounded-xl rounded-tl-none shadow-sm">
+              <p class="text-gray-800 dark:text-gray-200">${content}</p>
+            </div>
+            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 ml-1">Just now</p>
+          </div>
+        `;
+      }
+      
+      chatbotMessages.appendChild(messageDiv);
+      scrollToBottom();
+    }
+    
+    // Add typing indicator
+    function addTypingIndicator() {
+      const typingDiv = document.createElement('div');
+      typingDiv.className = 'flex items-start gap-3 message-fade-in';
+      typingDiv.innerHTML = `
+        <div class="flex-shrink-0">
+          <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center text-white">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd" />
+            </svg>
+          </div>
+        </div>
+        <div class="max-w-[80%]">
+          <div class="bg-white dark:bg-gray-700 p-3 rounded-xl rounded-tl-none shadow-sm">
+            <div class="flex space-x-2">
+              <div class="w-2 h-2 rounded-full bg-gray-400 animate-bounce"></div>
+              <div class="w-2 h-2 rounded-full bg-gray-400 animate-bounce" style="animation-delay: 0.2s"></div>
+              <div class="w-2 h-2 rounded-full bg-gray-400 animate-bounce" style="animation-delay: 0.4s"></div>
+            </div>
+          </div>
+        </div>
+      `;
+      
+      chatbotMessages.appendChild(typingDiv);
+      scrollToBottom();
+      return typingDiv;
+    }
+    
+    // Generate AI response
+    function generateResponse(message) {
+      const responses = {
+        "Pricing plans": "We offer flexible pricing starting at $299/month. Our Professional plan at $799/month is most popular. Would you like detailed pricing information?",
+        "Feature demo": "You can schedule a live demo with our team or try our interactive product tour. Which would you prefer?",
+        "Integration help": "We integrate with all major platforms including CRM, helpdesk, and communication tools. Any specific system you need help with?",
+        "default": [
+          "I understand you're asking about: " + message + ". How can I assist you with this?",
+          "Thanks for your question! Our team specializes in this area. Would you like me to connect you with an expert?",
+          "That's an excellent question about " + message + ". Here's what I can tell you...",
+          "I've noted your inquiry regarding " + message + ". Here are some helpful resources..."
+        ]
+      };
+      
+      if (responses[message]) {
+        return responses[message];
+      } else {
+        const defaultResponses = responses['default'];
+        return defaultResponses[Math.floor(Math.random() * defaultResponses.length)];
+      }
+    }
+    
+    // Scroll to bottom of chat
+    function scrollToBottom() {
+      setTimeout(() => {
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+      }, 50);
+    }
+    
+    // Send message on button click
+    sendChatbotMessage.addEventListener('click', sendMessage);
+    
+    // Send message on Enter key (without Shift)
+    chatbotInput.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' && !e.shiftKey) {
+        e.preventDefault();
+        sendMessage();
+      }
+    });
+    
+    // Auto-open for demo purposes
+    setTimeout(() => {
+      openChatbot.click();
+    }, 3000);
+  });
+</script> 
+    
+    
+    
+    
+</body>
+</html>
